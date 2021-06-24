@@ -1,4 +1,5 @@
 /* This file is in charge of database connection*/
+const propertyList = ['name','description', 'done' ,'deadline']
 
 // import express so you can use it
 const express = require('express');
@@ -6,8 +7,8 @@ const {store, Tilder} = require('./model')
 const cors = require("cors");
 const app = express();
 app.use(cors());
-const propertyList = ['name','description', 'done' ,'deadline']
 app.use(express.json({}));
+
 // Get - get all
 app.use((req, res, next)=>{
     console.log(
