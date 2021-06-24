@@ -7,6 +7,7 @@ const {store, Tilder} = require('./model')
 const cors = require("cors");
 const app = express();
 app.use(cors());
+app.use(express.static('static'))
 app.use(express.json({}));
 
 // Get - get all
