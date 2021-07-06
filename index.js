@@ -1,7 +1,7 @@
 // This file is in charge of starting the application
 const server = require("./server");
 const persist = require("./persist");
-
+const background = require("./background.js")
 //define a port
 const port = process.argv[2] || process.env.PORT || 8080;
 
@@ -12,3 +12,6 @@ persist.connect(()=>{
     })
 })
 //connect to the databse
+setInterval(()=>{
+    background.myCleanUpProcesses();
+}, 1000)

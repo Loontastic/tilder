@@ -6,7 +6,7 @@ const express = require('express');
 const {store, Tilder} = require('./model')
 const cors = require("cors");
 const app = express();
-app.use(cors());
+app.use(cors());    
 app.use(express.static('static'))
 app.use(express.json({}));
 
@@ -27,7 +27,6 @@ app.get('/tilder', (req, res)=>{
     res.setHeader("Content-Type", "application/json");
     console.log(`Getting all tilders`);
     let findQuery = {};
-
     for (const property in propertyList){   
         if (req.query[propertyList[property]]){
             findQuery[propertyList[property]] = req.query[propertyList[property]];
